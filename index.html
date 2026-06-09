@@ -1,11 +1,2990 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deco_Fiesta_Bogota</title>
+    <title>Deco Fiesta Bogotá | Decoración Creativa y Diseño de Eventos Temáticos</title>
+    
+    <!-- Meta tags optimizados para SEO local en Bogotá -->
+    <meta name="description" content="Decoración de fiestas y eventos exclusivos en Bogotá. Creamos backdrops de lujo, arcos de globos orgánicos, iluminación neon y mobiliario temático único.">
+    <link rel="icon" href="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=32&h=32&q=80">
+
+    <!-- Fuentes Premium: Montserrat para títulos modernos y dinámicos, Inter para legibilidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Iconos de FontAwesome para interfaz visual premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos de Alta Fidelidad en CSS Puro (Sin Tailwind) con soporte de Tematización Dinámica -->
+    <style>
+        /* --- CONFIGURACIÓN DE VARIABLES DEL SISTEMA (Tema Claro por defecto) --- */
+        :root {
+            /* Colores corporativos vibrantes constantes (Logo de Explosión de Pintura) */
+            --color-pink: #ec4899;    
+            --color-blue: #0ea5e9;    
+            --color-yellow: #eab308;  
+            --color-green: #22c55e;   
+            --color-magenta: #d946ef; 
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-neon: 0 0 15px rgba(236, 72, 153, 0.2);
+
+            /* Semántica de Colores del Tema Claro (Predeterminado) */
+            --bg-primary: #f8fafc;       
+            --bg-card: #ffffff;         
+            --text-primary: #0f172a;    
+            --text-secondary: #475569;  
+            --border-color: rgba(15, 23, 42, 0.08);
+            --header-bg: rgba(248, 250, 252, 0.85);
+            --header-scrolled: rgba(248, 250, 252, 0.95);
+            --input-bg: rgba(255, 255, 255, 0.9);
+            --card-interactive-bg: rgba(15, 23, 42, 0.02);
+            --card-interactive-border: rgba(15, 23, 42, 0.08);
+            --hero-card-bg: rgba(255, 255, 255, 0.9);
+            --hero-opacity: 0.12;
+            --hero-brightness: 1.1;
+            --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+            --slider-before-filter: grayscale(50%) brightness(75%);
+        }
+
+        /* --- CONFIGURACIÓN PARA EL TEMA OSCURO --- */
+        [data-theme="dark"] {
+            --bg-primary: #09090b;       
+            --bg-card: #18181b;         
+            --text-primary: #f8fafc;    
+            --text-secondary: #94a3b8;  
+            --border-color: rgba(255, 255, 255, 0.08);
+            --header-bg: rgba(9, 9, 11, 0.85);
+            --header-scrolled: rgba(9, 9, 11, 0.95);
+            --input-bg: rgba(9, 9, 11, 0.5);
+            --card-interactive-bg: rgba(255, 255, 255, 0.02);
+            --card-interactive-border: rgba(255, 255, 255, 0.08);
+            --hero-card-bg: rgba(24, 24, 27, 0.75);
+            --hero-opacity: 0.18;
+            --hero-brightness: 0.6;
+            --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+            --slider-before-filter: grayscale(80%) brightness(50%);
+        }
+
+        /* --- CONFIGURACIÓN GLOBAL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Suavizado en la mutación de colores durante el toggle */
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        /* --- SCROLLBAR PERSONALIZADA --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--color-pink), var(--color-blue));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-yellow);
+        }
+
+        /* --- CLASES DE UTILIDAD --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .text-neon-pink {
+            color: var(--color-pink);
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+        }
+
+        .text-neon-blue {
+            color: var(--color-blue);
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+        }
+
+        .text-neon-yellow {
+            color: var(--color-yellow);
+            text-shadow: 0 0 10px rgba(234, 179, 8, 0.3);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-pink), var(--color-magenta));
+            color: white;
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(236, 72, 153, 0.6);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--card-interactive-bg);
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+            transform: translateY(-2px);
+        }
+
+        /* --- TOASTS DE NOTIFICACIÓN --- */
+        #toast-container {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 380px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--bg-card);
+            border-left: 4px solid var(--color-pink);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: var(--shadow-premium);
+            backdrop-filter: blur(8px);
+            color: var(--text-primary);
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            pointer-events: auto;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* --- BOTÓN DE CAMBIO DE TEMA (TOGGLER) --- */
+        .theme-toggle-btn {
+            background: var(--card-interactive-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 1.15rem;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .theme-toggle-btn:hover {
+            background: linear-gradient(135deg, var(--color-pink), var(--color-magenta));
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-neon);
+            transform: rotate(360deg) scale(1.08);
+        }
+
+        /* --- ENCABEZADO GLASSMORPHIC --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 50;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled {
+            height: 70px;
+            background: var(--header-scrolled);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo-img {
+            height: 52px;
+            width: 52px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--color-pink);
+            background-color: black;
+            box-shadow: var(--shadow-neon);
+            transition: var(--transition-smooth);
+        }
+
+        header.scrolled .logo-img {
+            height: 44px;
+            width: 44px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text span:first-child {
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .logo-text span:last-child {
+            color: var(--color-pink);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+        }
+
+        nav.desktop-nav {
+            display: none;
+        }
+
+        nav.desktop-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav.desktop-nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            transition: var(--transition-smooth);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav.desktop-nav a:hover, nav.desktop-nav a.active {
+            color: var(--color-pink);
+        }
+
+        nav.desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-pink), var(--color-blue));
+            transition: var(--transition-smooth);
+        }
+
+        nav.desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: none;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #mobile-menu-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        #mobile-menu-btn:hover {
+            color: var(--color-pink);
+            transform: scale(1.1);
+        }
+
+        /* --- MENÚ MÓVIL --- */
+        #mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: var(--header-scrolled);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            z-index: 49;
+            transform: translateY(-120%);
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-premium);
+        }
+
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        #mobile-menu a {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        #mobile-menu a:hover {
+            color: var(--color-pink);
+            padding-left: 0.5rem;
+        }
+
+        /* --- HERO SECTION VIBRANTE --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: var(--hero-opacity);
+            filter: saturate(1.2) brightness(var(--hero-brightness));
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 20%, var(--bg-primary) 80%);
+        }
+
+        .hero-canvas-glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+            top: 10%;
+            right: 5%;
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .badge-hero {
+            align-self: flex-start;
+            background: rgba(236, 72, 153, 0.12);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            color: var(--color-pink);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* Tarjeta de Acción Rápida */
+        .hero-card {
+            background: var(--hero-card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-premium);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.8rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: var(--color-blue);
+        }
+
+        .hero-slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            width: 100%;
+            height: 6px;
+            border-radius: 9999px;
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            background: var(--border-color);
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-pink);
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+            transition: transform 0.1s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:active {
+            transform: scale(1.2);
+        }
+
+        .slider-value {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-yellow);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .grid-event-type {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .type-btn {
+            background: var(--card-interactive-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .type-btn.active {
+            background: linear-gradient(135deg, var(--color-blue), rgba(14, 165, 233, 0.3));
+            color: white;
+            border-color: var(--color-blue);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.25);
+        }
+
+        .hero-result {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .hero-result-value {
+            font-size: 1.6rem;
+            color: var(--color-yellow);
+            font-weight: 800;
+        }
+
+        /* --- SECCIÓN ESTADÍSTICAS --- */
+        .stats-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem;
+        }
+
+        .stat-item:not(:last-child) {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-yellow), var(--color-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-desc {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+
+        /* --- SECCIÓN SERVICIOS --- */
+        .services-section {
+            padding: 6rem 0;
+            background-color: var(--bg-primary);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-badge {
+            color: var(--color-pink);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-pink), var(--color-blue));
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.2);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--card-interactive-bg);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-pink);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--color-pink), var(--color-magenta));
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            margin-top: 0.5rem;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .service-list i {
+            color: var(--color-green);
+        }
+
+        .service-card .btn-text {
+            align-self: flex-start;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .btn-text {
+            color: var(--color-pink);
+        }
+
+        .service-card:hover .btn-text i {
+            transform: translateX(4px);
+        }
+
+        /* --- SECCIÓN COMPARACIÓN (ANTES/DESPUÉS) --- */
+        .before-after-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-primary), var(--bg-card));
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .comparison-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card-mini {
+            display: flex;
+            gap: 1rem;
+            background: var(--card-interactive-bg);
+            padding: 1.2rem;
+            border-radius: 16px;
+            border-left: 3px solid var(--color-blue);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-card-mini i {
+            font-size: 1.4rem;
+            color: var(--color-blue);
+            margin-top: 0.2rem;
+        }
+
+        .info-card-mini h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .info-card-mini p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Slider de Comparación Visual */
+        .before-after-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+            border: 4px solid var(--border-color);
+        }
+
+        .slider-image-after {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-image-before-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .slider-image-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: var(--slider-before-filter);
+            max-width: none;
+        }
+
+        .label-before-after {
+            position: absolute;
+            bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            z-index: 15;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .label-before {
+            left: 1.5rem;
+            color: white;
+        }
+
+        .label-after {
+            right: 1.5rem;
+            color: var(--color-pink);
+        }
+
+        .slider-divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: white;
+            z-index: 20;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: var(--color-pink);
+            border-radius: 50%;
+            border: 3px solid white;
+            z-index: 21;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: white;
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+            pointer-events: none;
+            font-size: 0.8rem;
+        }
+
+        .before-after-input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 30;
+            cursor: ew-resize;
+        }
+
+        /* --- SECCIÓN PORTAFOLIO --- */
+        .portfolio-section {
+            padding: 6rem 0;
+            background-color: var(--bg-primary);
+        }
+
+        .portfolio-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: var(--card-interactive-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--color-pink), var(--color-magenta));
+            color: white;
+            border-color: transparent;
+            box-shadow: var(--shadow-neon);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.2);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .portfolio-img-wrapper {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(9, 9, 11, 0.7);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .btn-maximize {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-blue);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            transform: translateY(15px);
+        }
+
+        .portfolio-card:hover .btn-maximize {
+            transform: translateY(0);
+        }
+
+        .portfolio-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .portfolio-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-yellow);
+        }
+
+        .portfolio-body h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-body p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- LIGHTBOX MODAL --- */
+        #gallery-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(9, 9, 11, 0.98);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        #gallery-modal.active {
+            display: flex;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--color-pink);
+            transform: scale(1.1);
+        }
+
+        .modal-nav {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-nav:hover {
+            background: var(--color-pink);
+            transform: scale(1.05);
+        }
+
+        .modal-nav-left { left: 1.5rem; }
+        .modal-nav-right { right: 1.5rem; }
+
+        .modal-content-inner {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #modal-image {
+            max-height: 70vh;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        #modal-caption {
+            color: white;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* --- CALCULADORA DE PRESUPUESTOS (BOGOTÁ COP) --- */
+        .calculator-section {
+            padding: 6rem 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .calc-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 32px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .calc-options {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .calc-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-service-type {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .service-type-option {
+            position: relative;
+            background: var(--card-interactive-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .service-type-option:hover {
+            background: var(--card-interactive-bg);
+            border-color: var(--color-pink);
+        }
+
+        .service-type-option input[type="radio"] {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            accent-color: var(--color-pink);
+        }
+
+        .service-type-option i {
+            font-size: 1.5rem;
+            color: var(--color-pink);
+        }
+
+        .service-type-option-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .service-type-option-content span:first-child {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .service-type-option-content span:last-child {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .service-type-option.active {
+            border-color: var(--color-pink);
+            background: rgba(236, 72, 153, 0.05);
+        }
+
+        .quality-options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+        }
+
+        .quality-btn {
+            background: var(--card-interactive-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .quality-btn:hover {
+            background: var(--card-interactive-bg);
+            border-color: var(--color-yellow);
+        }
+
+        .quality-btn.active {
+            border-color: var(--color-yellow);
+            background: rgba(234, 179, 8, 0.05);
+            color: var(--color-yellow);
+        }
+
+        /* Panel de Resultados Calculadora */
+        .calc-results-panel {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-results-panel::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+            bottom: -50px;
+            right: -50px;
+            pointer-events: none;
+        }
+
+        .calc-results-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .result-rango-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-pink);
+        }
+
+        .result-rango-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .result-rango-num span:last-child {
+            font-size: 1.5rem;
+            color: var(--color-yellow);
+        }
+
+        .calc-summary-list {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .calc-summary-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .calc-summary-item span:first-child {
+            color: var(--text-secondary);
+        }
+
+        .calc-summary-item span:last-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .calc-footnote {
+            font-size: 0.7rem;
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* --- SECCIÓN TESTIMONIOS --- */
+        .testimonials-section {
+            padding: 6rem 0;
+            background-color: var(--bg-primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(236, 72, 153, 0.2);
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-blue);
+        }
+
+        .author-info h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .author-info p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-style: normal;
+        }
+
+        /* --- SECCIÓN FAQ ACCORDION --- */
+        .faq-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-primary), var(--bg-card));
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-btn {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-btn:hover {
+            color: var(--color-pink);
+        }
+
+        .faq-btn i {
+            color: var(--color-pink);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            padding: 0 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-content {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .contact-section {
+            padding: 6rem 0;
+            background-color: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--text-primary);
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--card-interactive-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-blue);
+            font-size: 1.2rem;
+        }
+
+        .contact-detail-text p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .social-row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--card-interactive-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .social-btn:hover {
+            background: var(--color-pink);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Formulario */
+        .contact-card-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .contact-card-wrapper h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.9rem 1.2rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-smooth);
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-pink);
+            box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+            background: var(--bg-card);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: none;
+        }
+
+        .terms-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .terms-row input {
+            margin-top: 0.2rem;
+            accent-color: var(--color-pink);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            color: var(--color-pink);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+            padding-left: 2px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* --- MEDIA QUERIES (RESPONSIVE) --- */
+        @media (min-width: 768px) {
+            nav.desktop-nav {
+                display: block;
+            }
+            .header-actions {
+                display: flex;
+            }
+            #mobile-menu-btn {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .hero-buttons {
+                flex-direction: row;
+            }
+            .hero-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .stat-item:not(:last-child) {
+                border-right: 1px solid var(--border-color);
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comparison-grid {
+                grid-template-columns: 0.9fr 1.1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .calc-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .contact-grid {
+                grid-template-columns: 0.9fr 1.1fr;
+            }
+            .form-row-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Contenedor global de Toasts -->
+    <div id="toast-container"></div>
+
+    <!-- Encabezado / Navbar con Efecto Glassmorphic -->
+    <header id="main-header">
+        <div class="container nav-wrapper">
+            <!-- Logo que combina la Imagen Local con texto premium -->
+            <a href="#" class="logo-container">
+                <img src="WhatsApp Image 2026-06-08 at 5.10.12 PM.jpeg" 
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=120&h=120&q=80'; this.style.borderRadius='50%';" 
+                     alt="Deco Fiesta Bogotá Logo" 
+                     class="logo-img">
+                <div class="logo-text">
+                    <span>DECO FIESTA</span>
+                    <span>BOGOTÁ</span>
+                </div>
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#antes-despues">Antes/Después</a></li>
+                    <li><a href="#portafolio">Galería</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- CTA Navegación Escritorio + Toggler de Tema -->
+            <div class="header-actions">
+                <!-- Botón de Tema Escritorio (Por defecto muestra la luna porque el tema base es claro) -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema claro/oscuro">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#calculadora" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+                    Cotizar Ahora
+                </a>
+            </div>
+
+            <!-- Botón de Menú Móvil -->
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <!-- Botón de Tema en móviles rápido -->
+                <button id="mobile-theme-toggle" class="theme-toggle-btn" style="width: 38px; height: 38px; font-size: 1rem; display: inline-flex; md:none;" aria-label="Cambiar tema móvil">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="mobile-menu-btn" aria-label="Abrir menú de navegación">
+                    <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#antes-despues">Antes/Después</a>
+            <a href="#portafolio">Galería</a>
+            <a href="#calculadora">Calculadora Express</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#calculadora" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Diseñar Mi Evento</a>
+        </div>
+    </header>
+
+    <!-- Hero Section con atmósfera de luz, color y celebración -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1920&q=80" alt="Luces de fiesta y globos de colores">
+        </div>
+        <div class="hero-canvas-glow"></div>
+
+        <div class="container hero-grid">
+            <!-- Copys principales -->
+            <div class="hero-content">
+                <div class="badge-hero">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Especialistas en Decoración Creativa</span>
+                </div>
+                <h1>
+                    Creamos <span class="text-neon-pink">magia</span> en cada detalle de tu <span class="text-neon-blue">fiesta</span>.
+                </h1>
+                <p>
+                    Transformamos salones comunes y áreas abiertas de Bogotá en experiencias inmersivas inolvidables. Arcos de globos orgánicos, backdrops de lujo, iluminación neon y temáticas a medida.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#calculadora" class="btn btn-primary">
+                        <span>Calcular Presupuesto</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#portafolio" class="btn btn-secondary">Ver Galería Real</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta Interactiva rápida de la sección de Hero -->
+            <div class="hero-card">
+                <h3>¿Planeas un Evento?</h3>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Estima rápidamente un rango de cotización de acuerdo al número de invitados en Bogotá.</p>
+                
+                <div class="form-group">
+                    <label>Número de Invitados</label>
+                    <div class="hero-slider-container">
+                        <input type="range" id="hero-guests-slider" min="15" max="250" value="60">
+                        <span class="slider-value" id="hero-slider-val">60 Pers.</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de Celebración</label>
+                    <div class="grid-event-type">
+                        <button onclick="selectHeroEventType('social', this)" class="type-btn active">Social / Infantil</button>
+                        <button onclick="selectHeroEventType('premium', this)" class="type-btn">15 Años / Boda / Glow</button>
+                    </div>
+                </div>
+
+                <div class="hero-result">
+                    <div>
+                        <span style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); display: block;">Estimado Inicial (COP)</span>
+                        <span class="hero-result-value" id="hero-calc-result">$1.200.000</span>
+                    </div>
+                    <a href="#calculadora" style="font-size: 0.8rem; color: var(--color-blue); font-weight: 600;" class="hover:text-neon-pink">
+                        Ajustar cálculo <i class="fa-solid fa-arrow-right" style="font-size: 0.7rem; margin-left: 2px;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas de Impacto y Confianza -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <p class="stat-num">500+</p>
+                <p class="stat-desc">Eventos Decorados</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-num">8+</p>
+                <p class="stat-desc">Años Creando Risas</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-num">100%</p>
+                <p class="stat-desc">Diseños Personalizados</p>
+            </div>
+            <div class="stat-item">
+                <p class="stat-num">4.9</p>
+                <p class="stat-desc">Calificación Promedio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios Creativos -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nuestras Especialidades</span>
+                <h2>Transformación Creativa de Espacios</h2>
+                <div style="width: 50px; height: 3px; background: var(--color-pink); margin-top: 0.5rem; border-radius: 99px;"></div>
+                <p>Nos encargamos del diseño conceptual, el montaje técnico y el desmontaje de toda la ambientación festiva para que tú solo disfrutes.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-circle-nodes"></i>
+                    </div>
+                    <h3>Arcos de Globos Orgánicos</h3>
+                    <p>Diseño de estructuras de globos de diversos diámetros siguiendo tendencias globales. Integración perfecta de colores pastel, mate, metalizados y texturas orgánicas.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Combinación cromática personalizada</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Integración de follaje y flores artificiales</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Calidad premium (globos de látex biodegradable)</li>
+                    </ul>
+                    <a href="#contacto" class="btn-text">
+                        <span>Cotizar Diseño de Globos</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3>Candy Bar & Backdrops</h3>
+                    <p>Fondos temáticos de alta gama (cilindros, paneles circulares, Shimmer walls de lentejuelas brillantes) y soportes elegantes para repostería y postres.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Letreros personalizados tallados o en Neon Flex</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Alzadores y bandejas de lujo coordinadas</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Estructuras geométricas modernas</li>
+                    </ul>
+                    <a href="#contacto" class="btn-text">
+                        <span>Ver Diseños de Fondos</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3>Efectos Glow & Luces Neon</h3>
+                    <p>Iluminación de atmósfera para crear un ambiente vibrante. Letreros con mensajes festivos personalizados, tiras de luz ambiental y zonas de fotografía interactivas (Photocall).</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Letreros Neon Flex listos para colgar</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Focos LED perimetrales inteligentes</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Estructuras con luz retroiluminada</li>
+                    </ul>
+                    <a href="#contacto" class="btn-text">
+                        <span>Explorar Diseños Luminosos</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparador Antes y Después Interactivo -->
+    <section id="antes-despues" class="before-after-section">
+        <div class="container comparison-grid">
+            <!-- Columna Informativa -->
+            <div class="comparison-info">
+                <span class="section-badge" style="color: var(--color-blue)">El Arte de la Transformación</span>
+                <h2>De un Salón Vacío a una Fiesta de Película</h2>
+                <p>
+                    Observa la magia de nuestro equipo de diseño. Mediante la colocación estratégica de globos orgánicos, paneles decorativos con luz, mobiliario especializado y backdrops, convertimos cualquier salón o jardín en un escenario temático espectacular.
+                </p>
+                <div class="info-card-mini">
+                    <i class="fa-solid fa-wand-magic"></i>
+                    <div>
+                        <h4>Optimización de Esquinas y Paredes</h4>
+                        <p>Los arcos orgánicos cubren perfectamente zonas inactivas, dándole volumen y elegancia al fondo principal de fotos.</p>
+                    </div>
+                </div>
+                <div class="info-card-mini" style="border-left-color: var(--color-pink)">
+                    <i class="fa-solid fa-bolt" style="color: var(--color-pink)"></i>
+                    <div>
+                        <h4>Impacto de Iluminación Focal</h4>
+                        <p>Añadimos luces indirectas y letreros neon para garantizar que las fotos grupales salgan perfectas sin importar la hora.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor del Control Deslizante (Slider Antes/Después) -->
+            <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div class="before-after-wrapper" id="ba-container">
+                    <!-- Imagen Después (Fondo) -->
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80" alt="Decoración de fiesta terminada" class="slider-image-after">
+                    <span class="label-before-after label-after">Decorado</span>
+
+                    <!-- Imagen Antes (Contenedor recortable) -->
+                    <div class="slider-image-before-container" id="ba-before-wrap">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Salón vacío antes del montaje" class="slider-image-before">
+                        <span class="label-before-after label-before">Salón Vacío</span>
+                    </div>
+
+                    <!-- Divisor visual -->
+                    <div class="slider-divider" id="ba-divider">
+                        <div class="slider-handle">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <!-- Input de rango invisible superpuesto -->
+                    <input type="range" min="0" max="100" value="50" class="before-after-input" id="ba-range-input" aria-label="Deslizador de comparación antes y después de fiesta">
+                </div>
+                <p style="font-size: 0.8rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+                    <i class="fa-solid fa-angles-left"></i> Arrastra el control central para comparar el cambio <i class="fa-solid fa-angles-right"></i>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Filtrable (Portafolio de Eventos Reales) -->
+    <section id="portafolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" style="color: var(--color-yellow)">Inspiración Real</span>
+                <h2>Momentos que se Quedan en el Corazón</h2>
+                <div style="width: 50px; height: 3px; background: var(--color-yellow); margin-top: 0.5rem; border-radius: 99px;"></div>
+                <p>Explora fotografías reales de montajes que hemos diseñado en Bogotá para familias y corporativos comprometidos con dar lo mejor.</p>
+            </div>
+
+            <!-- Filtros Dinámicos -->
+            <div class="portfolio-filters" id="portfolio-filters">
+                <button onclick="filterPortfolio('todos', this)" class="filter-btn active">Todos</button>
+                <button onclick="filterPortfolio('cumpleanos', this)" class="filter-btn">Cumpleaños</button>
+                <button onclick="filterPortfolio('quince-boda', this)" class="filter-btn">15 Años & Bodas</button>
+                <button onclick="filterPortfolio('corporativo', this)" class="filter-btn">Corporativos</button>
+            </div>
+
+            <!-- Grid de Fotos del Portafolio -->
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Foto 1 -->
+                <div class="portfolio-card" data-category="cumpleanos">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Cumpleaños Infantil de Selva">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(0)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Cumpleaños Infantil</span>
+                        <h3>Temática Selva Orgánica</h3>
+                        <p>Arco de globos en tonos salvia, dorado satinado y crema, integrado con animales de madera.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="portfolio-card" data-category="quince-boda">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80" alt="Boda Estilo Vintage Boho">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(1)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Boda / 15 Años</span>
+                        <h3>Vintage Boho Chic</h3>
+                        <p>Estructura circular dorada de globos arena junto a arreglos de flores preservadas de pampa.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="portfolio-card" data-category="corporativo">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Cóctel Empresarial Bogotá">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(2)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Corporativo</span>
+                        <h3>Gala Neón Empresarial</h3>
+                        <p>Letreros neón de marca integrados en un muro Shimmer negro con cascada de globos plateados.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="portfolio-card" data-category="cumpleanos">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Festa Infantil Astronauta">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(3)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Cumpleaños</span>
+                        <h3>Universo & Galaxia</h3>
+                        <p>Iluminación ultravioleta, globos azul marino y detalles colgantes con temática de astronauta.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="portfolio-card" data-category="quince-boda">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=800&q=80" alt="Celebración de 15 Años Glam">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(4)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">15 Años</span>
+                        <h3>Sweet 15 Rosé Glam</h3>
+                        <p>Panel de lentejuelas rosa, letrero neon "My Sweet 15" y decoración monumental de globos cromados.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="portfolio-card" data-category="corporativo">
+                    <div class="portfolio-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505232458627-a872948975b2?auto=format&fit=crop&w=800&q=80" alt="Inauguración de Tienda Bogotá">
+                        <div class="portfolio-overlay">
+                            <button onclick="openGalleryModal(5)" class="btn-maximize"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                    </div>
+                    <div class="portfolio-body">
+                        <span class="portfolio-tag">Corporativo</span>
+                        <h3>Inauguración Boutique</h3>
+                        <p>Arco de globos corporativo asimétrico de alto volumen para fachada comercial en Chapinero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Galería Pantalla Completa (Lightbox) -->
+    <div id="gallery-modal">
+        <button onclick="closeGalleryModal()" class="modal-close-btn" aria-label="Cerrar modal de imágenes"><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="prevGalleryImage()" class="modal-nav modal-nav-left" aria-label="Ver imagen anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="modal-content-inner">
+            <img id="modal-image" src="" alt="Ampliación del evento de Deco Fiesta Bogotá">
+            <p id="modal-caption"></p>
+        </div>
+        <button onclick="nextGalleryImage()" class="modal-nav modal-nav-right" aria-label="Ver siguiente imagen"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Calculadora Dinámica de Presupuesto (COP) -->
+    <section id="calculadora" class="calculator-section">
+        <div class="container">
+            <div class="calc-wrapper">
+                <div class="section-header" style="margin-bottom: 3rem;">
+                    <span class="section-badge" style="color: var(--color-pink)">Simulador en Tiempo Real</span>
+                    <h2>Planifica el Costo de tu Fiesta</h2>
+                    <p>Configura los detalles de tu evento para obtener una estimación de presupuesto basada en costos de Bogotá.</p>
+                </div>
+
+                <div class="calc-grid">
+                    <!-- Opciones de entrada de datos -->
+                    <div class="calc-options">
+                        
+                        <!-- 1. Tipo de Servicio -->
+                        <div>
+                            <p class="calc-heading">1. Tipo de Montaje Temático</p>
+                            <div class="grid-service-type">
+                                <label class="service-type-option active" id="opt-service-social">
+                                    <input type="radio" name="calc-service-radio" value="social" checked onchange="updateCalculator()">
+                                    <i class="fa-solid fa-gift"></i>
+                                    <div class="service-type-option-content">
+                                        <span>Social & Infantil</span>
+                                        <span>Decoración colorida, mesa principal y arco de globos tradicional.</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="service-type-option" id="opt-service-glam">
+                                    <input type="radio" name="calc-service-radio" value="glam" onchange="updateCalculator()">
+                                    <i class="fa-solid fa-crown"></i>
+                                    <div class="service-type-option-content">
+                                        <span>Glam / 15 Años / Bodas</span>
+                                        <span>Backdrops dobles, luces neon, cilindros personalizados y globos orgánicos densos.</span>
+                                    </div>
+                                </label>
+
+                                <label class="service-type-option" id="opt-service-corp">
+                                    <input type="radio" name="calc-service-radio" value="corp" onchange="updateCalculator()">
+                                    <i class="fa-solid fa-building-sparkles"></i>
+                                    <div class="service-type-option-content">
+                                        <span>Gala Corporativa & Neon</span>
+                                        <span>Muros de lentejuelas gigantes, iluminación LED inteligente, branding y montaje monumental.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 2. Nivel de Opulencia / Escenario -->
+                        <div>
+                            <p class="calc-heading">2. Densidad y Acabados de Globos</p>
+                            <div class="quality-options-grid">
+                                <button onclick="selectQuality('esencial')" id="btn-q-ese" class="quality-btn">Esencial</button>
+                                <button onclick="selectQuality('estandar')" id="btn-q-est" class="quality-btn active">Abundante</button>
+                                <button onclick="selectQuality('premium')" id="btn-q-pre" class="quality-btn">De Película</button>
+                            </div>
+                        </div>
+
+                        <!-- 3. Tamaño del Espacio (Área o Invitados) -->
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <p class="calc-heading" style="margin-bottom: 0;">3. Invitados Proyectados</p>
+                                <span class="slider-value" id="calc-guests-label" style="background: var(--card-interactive-bg); padding: 0.2rem 0.6rem; border-radius: 6px;">50 Personas</span>
+                            </div>
+                            <input type="range" id="calc-guests-input" min="10" max="250" value="50" step="5" oninput="updateCalculator()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.65rem; color: #64748b; margin-top: 0.5rem;">
+                                <span>10 Pers. (Fiesta en casa)</span>
+                                <span>120 Pers. (Salón mediano)</span>
+                                <span>250 Pers. (Evento masivo)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Panel de Resultados visuales -->
+                    <div class="calc-results-panel">
+                        <div class="calc-results-info">
+                            <span class="result-rango-heading">Presupuesto Estimado</span>
+                            <div class="result-rango-num">
+                                <span id="calc-range-min">$1.200.000</span>
+                                <span>hasta</span>
+                                <span id="calc-range-max" class="text-neon-yellow">$1.500.000</span>
+                            </div>
+                            
+                            <div class="calc-summary-list">
+                                <div class="calc-summary-item">
+                                    <span>Línea temática:</span>
+                                    <span id="summary-linea">Social & Infantil</span>
+                                </div>
+                                <div class="calc-summary-item">
+                                    <span>Densidad de Globos:</span>
+                                    <span id="summary-densidad">Abundante (Orgánico)</span>
+                                </div>
+                                <div class="calc-summary-item">
+                                    <span>Tiempo estimado de montaje:</span>
+                                    <span id="summary-tiempo" style="color: var(--color-blue)">3 - 4 Horas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button onclick="lockQuoteAndScroll()" class="btn btn-primary" style="width: 100%; border-radius: 14px;">
+                                Reservar Esta Combinación
+                            </button>
+                            <p class="calc-footnote">
+                                *Valores calculados para el casco urbano de Bogotá. Incluye transporte, montaje y desmontaje básico.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de Clientes -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Opiniones de las Familias</span>
+                <h2>Experiencias Deco Fiesta Bogotá</h2>
+                <div style="width: 50px; height: 3px; background: var(--color-pink); margin-top: 0.5rem; border-radius: 99px;"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <p>"El montaje de los 15 años de mi hija fue maravilloso. El muro de flores and el arco orgánico de globos rosados se convirtieron en la atracción principal de la noche. Todos los invitados se tomaron fotos ahí."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80" alt="Martha Liliana Gómez">
+                        <div class="author-info">
+                            <h4>Martha Liliana Gómez</h4>
+                            <p>Mamá de Sofía, Bogotá Norte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <p>"Excelente puntualidad y profesionalismo. Contratamos la temática de astronauta para el cumpleaños de mi hijo de 5 años y superaron mis expectativas. Los globos orgánicos se veían imponentes."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=80" alt="Carlos Andrés Rojas">
+                        <div class="author-info">
+                            <h4>Carlos Andrés Rojas</h4>
+                            <p>Papá de Mateo, Bogotá Cedritos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <p>"La iluminación neón y la pared Shimmer plateada para el cóctel de nuestra agencia fue espectacular. Un servicio impecable, rápido montaje y una atención de primera de principio a fin."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80" alt="Diana Carolina Pérez">
+                        <div class="author-info">
+                            <h4>Diana Carolina Pérez</h4>
+                            <p>Directora Creativa, Agencia Innova</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes (FAQ) con acordeón CSS/JS Puro -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge" style="color: var(--color-blue)">Resuelve tus dudas</span>
+                <h2>Preguntas Frecuentes</h2>
+                <div style="width: 50px; height: 3px; background: var(--color-blue); margin-top: 0.5rem; border-radius: 99px;"></div>
+            </div>
+
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(0)">
+                        <span>¿Con cuánta anticipación debo reservar mi decoración?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content" id="faq-content-0">
+                        Recomendamos agendar su fecha con un mínimo de 15 a 20 días de anticipación, especialmente para fines de semana, ya que manejamos un número de montajes limitado por día para garantizar la máxima calidad en Bogotá.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(1)">
+                        <span>¿La cotización incluye el transporte y montaje en cualquier zona de Bogotá?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content" id="faq-content-1">
+                        El simulador y las cotizaciones base cubren la mayor parte del casco urbano de Bogotá (desde Chía hasta Usme, según accesibilidad). Para zonas campestres de la Sabana (Cota, Tenjo, Tabio, Cajicá, Sopó) se adiciona un ajuste menor de transporte.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(2)">
+                        <span>¿Qué tipo de globos utilizan? ¿Se desinflan rápido?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content" id="faq-content-2">
+                        Utilizamos exclusivamente globos de látex de grado profesional (marcas como Sempertex, líderes globales de origen colombiano). Estos globos son biodegradables, tienen colores más intensos, paredes más gruesas y pueden durar inflados en interiores óptimos más de 5 días.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-btn" onclick="toggleFaq(3)">
+                        <span>¿Ustedes se encargan de retirar los elementos al terminar la fiesta?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content" id="faq-content-3">
+                        Sí, todos nuestros planes de backdrops y estructuras desmontables incluyen el desmontaje especializado y retiro de nuestras bases al culminar el evento (usualmente al día siguiente o al final de la jornada bajo acuerdo previo).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="container contact-grid">
+            <!-- Datos de contacto -->
+            <div class="contact-info">
+                <span class="section-badge">Hablemos de tu idea</span>
+                <h2>Diseñemos una Celebración Única</h2>
+                <p>Estaremos encantados de agendar una llamada o reunirnos digitalmente para perfilar los colores, logos o la temática que tienes en mente.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-detail-text">
+                            <p>Ubicación Principal</p>
+                            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Bogotá, Colombia (Showroom en Chicó)</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-detail-text">
+                            <p>WhatsApp Creativo</p>
+                            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">+57 312 456 7890</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-detail-text">
+                            <p>Correo de Proyectos</p>
+                            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">hola@decofiestabogota.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales de la persona -->
+                <div style="margin-top: 1rem;">
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">Síguenos para Inspiración Diaria</p>
+                    <div class="social-row">
+                        <a href="#" class="social-btn" aria-label="Síguenos en Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="Síguenos en TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-btn" aria-label="Síguenos en Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="social-btn" aria-label="Síguenos en Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Captación de Leads -->
+            <div class="contact-card-wrapper">
+                <h3>Solicitud de Diseño de Fiesta</h3>
+                <form id="lead-form" onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                    
+                    <!-- Almacén del String de la calculadora -->
+                    <input type="hidden" id="form-calc-details" name="calc-details" value="">
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">Tu Nombre *</label>
+                            <input class="form-control" type="text" id="name" required placeholder="Ej. Liliana Restrepo">
+                        </div>
+                        <div class="form-group">
+                            <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">WhatsApp / Celular *</label>
+                            <input class="form-control" type="tel" id="phone" required placeholder="Ej. 312 123 4567">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">Correo Electrónico *</label>
+                        <input class="form-control" type="email" id="email" required placeholder="tu@correo.com">
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">Fecha del Evento *</label>
+                            <input class="form-control" type="date" id="event-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">Barrio / Zona de Bogotá *</label>
+                            <input class="form-control" type="text" id="event-location" required placeholder="Ej. Usaquén, Salitre, Suba">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="color: var(--text-secondary); font-weight: 600; font-size: 0.75rem;">Háblanos de la temática o colores preferidos</label>
+                        <textarea class="form-control" id="message" placeholder="Ej. Cumpleaños número 1 de Safari, me gustaría que tenga tonos dorados, verdes pastel y crema, con animales de selva decorativos..."></textarea>
+                    </div>
+
+                    <label class="terms-row" for="terms">
+                        <input type="checkbox" id="terms" required checked>
+                        <span>Acepto que mis datos sean tratados únicamente con el propósito de agendar mi llamada de diseño y cotización de mi fiesta.</span>
+                    </label>
+
+                    <button class="btn btn-primary" type="submit" style="width: 100%; border-radius: 12px; font-weight: bold; margin-top: 0.5rem;">
+                        Agendar Mi Asesoría de Globos Gratis
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Corporativo -->
+    <footer>
+        <div class="container footer-grid">
+            <!-- Columna Logo -->
+            <div class="footer-col">
+                <a href="#" class="logo-container">
+                    <img src="WhatsApp Image 2026-06-08 at 5.10.12 PM.jpeg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=120&h=120&q=80'; this.style.borderRadius='50%';" 
+                         alt="Deco Fiesta Bogotá Logo Footer" 
+                         class="logo-img">
+                    <div class="logo-text">
+                        <span>DECO FIESTA</span>
+                        <span>BOGOTÁ</span>
+                    </div>
+                </a>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6;">
+                    Estudio de diseño creativo y ambientación de eventos con globos y estructuras premium en Bogotá y Sabana. Creando risas y recuerdos inolvidables.
+                </p>
+            </div>
+
+            <!-- Columna Enlaces -->
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Especialidades</a></li>
+                    <li><a href="#antes-despues">Antes / Después</a></li>
+                    <li><a href="#portafolio">Portafolio Fotográfico</a></li>
+                    <li><a href="#calculadora">Calculadora Express</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Temas -->
+            <div class="footer-col">
+                <h4>Celebraciones</h4>
+                <ul class="footer-links">
+                    <li><a href="#contacto">Cumpleaños de Bebés</a></li>
+                    <li><a href="#contacto">Decoración de 15 Años</a></li>
+                    <li><a href="#contacto">Bodas Boho & Clásicas</a></li>
+                    <li><a href="#contacto">Fiestas de Neon Glow</a></li>
+                    <li><a href="#contacto">Lanzamiento de Marcas</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna Newsletter / Contacto rápido -->
+            <div class="footer-col">
+                <h4>Ideas Mensuales</h4>
+                <p style="font-size: 0.75rem; color: var(--text-secondary);">Suscríbete a nuestra lista de correo para recibir ideas y tendencias globales para tu próxima fiesta.</p>
+                <form onsubmit="handleNewsletterSubmit(event)" style="display: flex;">
+                    <input class="form-control" style="border-radius: 10px 0 0 10px; padding: 0.6rem 1rem;" type="email" required placeholder="tu@correo.com">
+                    <button class="btn btn-primary" type="submit" style="border-radius: 0 10px 10px 0; padding: 0.6rem 1.2rem;">OK</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 Deco Fiesta Bogotá. Todos los derechos reservados. Diseñado para celebraciones con encanto.</p>
+            <div class="footer-bottom-links">
+                <a href="#" class="hover:text-white">Aviso de Privacidad</a>
+                <a href="#" class="hover:text-white">Términos del Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica Interactiva en JavaScript Puro -->
+    <script>
+        // --- 1. LÓGICA DE CONTROL DE TEMA (CLARO / OSCURO) ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+        
+        // Verifica el tema guardado en visitas previas, de lo contrario inicializa en Claro ('light')
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcons(savedTheme);
+
+        function updateThemeIcons(theme) {
+            const isDark = theme === 'dark';
+            // Icono de sol si es oscuro (para cambiar a claro) y de luna si es claro
+            const newIconClass = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            
+            if (themeToggleBtn) {
+                themeToggleBtn.querySelector('i').className = newIconClass;
+            }
+            if (mobileThemeToggleBtn) {
+                mobileThemeToggleBtn.querySelector('i').className = newIconClass;
+            }
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcons(newTheme);
+            
+            showToast(
+                `Tema ${newTheme === 'dark' ? 'Oscuro' : 'Claro'}`, 
+                `Se ha cambiado con éxito al diseño de fondos ${newTheme === 'dark' ? 'oscuros elegantes' : 'claros luminosos'}.`, 
+                "success"
+            );
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
+
+        // --- 2. LÓGICA DE NAVEGACIÓN Y MENÚ MÓVIL ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mainHeader = document.getElementById('main-header');
+
+        // Toggle menú móvil
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if(mobileMenu.classList.contains('active')) {
+                menuIcon.className = 'fa-solid fa-xmark';
+            } else {
+                menuIcon.className = 'fa-solid fa-bars-staggered';
+            }
+        });
+
+        // Cerrar menú móvil al pulsar un enlace
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                menuIcon.className = 'fa-solid fa-bars-staggered';
+            });
+        });
+
+        // Sincronizar estilo dinámico de barra al hacer scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+            detectActiveSection();
+        });
+
+        // Highlight dinámico de navegación de acuerdo al scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav.desktop-nav a');
+
+        function detectActiveSection() {
+            let scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 100;
+                const sectionId = current.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+
+        // --- 3. HERO SLIDER INTEGRADO (BOGOTÁ EVENTOS ESTIMADO) ---
+        const heroSlider = document.getElementById('hero-guests-slider');
+        const heroSliderVal = document.getElementById('hero-slider-val');
+        const heroCalcResult = document.getElementById('hero-calc-result');
+        let selectedHeroService = 'social'; // social o premium
+
+        function selectHeroEventType(type, btn) {
+            selectedHeroService = type;
+            document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateHeroEstimate();
+        }
+
+        function updateHeroEstimate() {
+            const guests = parseInt(heroSlider.value);
+            heroSliderVal.textContent = `${guests} Pers.`;
+            
+            // Base matemática adaptada a Bogotá en COP (Pesos Colombianos)
+            let basePricePerGuest = selectedHeroService === 'social' ? 14000 : 25000;
+            let setupFee = selectedHeroService === 'social' ? 550000 : 980000;
+            let estimatedTotal = setupFee + (guests * basePricePerGuest);
+
+            // Formatear a pesos colombianos
+            const formatted = new Intl.NumberFormat('es-CO', { 
+                style: 'currency', 
+                currency: 'COP', 
+                maximumFractionDigits: 0 
+            }).format(estimatedTotal);
+
+            heroCalcResult.textContent = formatted;
+        }
+
+        heroSlider.addEventListener('input', updateHeroEstimate);
+        updateHeroEstimate();
+
+
+        // --- 4. SLIDER DE COMPARACIÓN (ANTES/DESPUÉS) ---
+        const baContainer = document.getElementById('ba-container');
+        const baBeforeWrap = document.getElementById('ba-before-wrap');
+        const baDivider = document.getElementById('ba-divider');
+        const baRangeInput = document.getElementById('ba-range-input');
+
+        baRangeInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            baBeforeWrap.style.width = `${value}%`;
+            baDivider.style.left = `${value}%`;
+        });
+
+
+        // --- 5. PORTAFOLIO DINÁMICO DE EVENTOS ---
+        function filterPortfolio(category, filterButton) {
+            // Setea el botón activo estéticamente
+            const filterButtons = document.querySelectorAll('#portfolio-filters button');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButton.classList.add('active');
+
+            const items = document.querySelectorAll('.portfolio-card');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'todos' || itemCategory === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+
+        // --- 6. MODAL DE GALERÍA (LIGHTBOX) ---
+        const galleryImages = [
+            { src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80", caption: "Cumpleaños Infantil Temática Selva Orgánica en Salón Comunal" },
+            { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80", caption: "Vintage Boho Chic para Matrimonios en la Sabana" },
+            { src: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80", caption: "Gala Neón Empresarial con Muros Shimmer en Evento Corporativo" },
+            { src: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1200&q=80", caption: "Cumpleaños Temático Universo & Astronauta para Mateo" },
+            { src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80", caption: "Celebración Espectacular de 15 Años Glam Rosé en Bogotá" },
+            { src: "https://images.unsplash.com/photo-1505232458627-a872948975b2?auto=format&fit=crop&w=1200&q=80", caption: "Montaje Monumental Orgánico para Inauguración de Boutique en Chapinero" }
+        ];
+
+        let currentImgIndex = 0;
+        const galleryModal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalCaption = document.getElementById('modal-caption');
+
+        function openGalleryModal(index) {
+            currentImgIndex = index;
+            modalImage.src = galleryImages[index].src;
+            modalCaption.textContent = galleryImages[index].caption;
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function nextGalleryImage() {
+            currentImgIndex = (currentImgIndex + 1) % galleryImages.length;
+            modalImage.src = galleryImages[currentImgIndex].src;
+            modalCaption.textContent = galleryImages[currentImgIndex].caption;
+        }
+
+        function prevGalleryImage() {
+            currentImgIndex = (currentImgIndex - 1 + galleryImages.length) % galleryImages.length;
+            modalImage.src = galleryImages[currentImgIndex].src;
+            modalCaption.textContent = galleryImages[currentImgIndex].caption;
+        }
+
+
+        // --- 7. CALCULADORA DE PRESUPUESTO COMPLETA (COP) ---
+        let currentQuality = 'estandar'; // esencial, estandar, premium
+
+        function selectQuality(quality) {
+            currentQuality = quality;
+            
+            // Actualizar botones de calidad activos
+            document.querySelectorAll('.quality-btn').forEach(btn => btn.classList.remove('active'));
+            let activeId = 'btn-q-est';
+            if(quality === 'esencial') activeId = 'btn-q-ese';
+            if(quality === 'premium') activeId = 'btn-q-pre';
+            document.getElementById(activeId).classList.add('active');
+
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const guests = parseInt(document.getElementById('calc-guests-input').value);
+            document.getElementById('calc-guests-label').textContent = `${guests} Personas`;
+
+            // Obtener tipo de servicio del radio seleccionado
+            const selectedRadio = document.querySelector('input[name="calc-service-radio"]:checked');
+            const selectedService = selectedRadio ? selectedRadio.value : 'social';
+
+            // Actualizar apariencia activa del radio visual
+            document.querySelectorAll('.service-type-option').forEach(el => el.classList.remove('active'));
+            let activeWrapId = 'opt-service-social';
+            if(selectedService === 'glam') activeWrapId = 'opt-service-glam';
+            if(selectedService === 'corp') activeWrapId = 'opt-service-corp';
+            document.getElementById(activeWrapId).classList.add('active');
+
+            // Definición de Bases de Costos en COP
+            let baseSetupCost = 0;
+            let guestCostMultiplier = 0;
+            let serviceLabel = "Social & Infantil";
+            let durationLabel = "3 - 4 Horas";
+
+            if (selectedService === 'social') {
+                baseSetupCost = 500000;
+                guestCostMultiplier = 12000;
+                serviceLabel = "Social & Infantil";
+                durationLabel = guests > 100 ? "4 - 5 Horas" : "3 - 4 Horas";
+            } else if (selectedService === 'glam') {
+                baseSetupCost = 1100000;
+                guestCostMultiplier = 20000;
+                serviceLabel = "Glam / 15 Años / Bodas";
+                durationLabel = guests > 100 ? "5 - 6 Horas" : "4 - 5 Horas";
+            } else if (selectedService === 'corp') {
+                baseSetupCost = 1800000;
+                guestCostMultiplier = 28000;
+                serviceLabel = "Gala Corporativa & Neon";
+                durationLabel = guests > 100 ? "6 - 8 Horas" : "5 - 6 Horas";
+            }
+
+            // Multiplicador de volumen/densidad de globos
+            let densityMultiplier = 1.0;
+            let densityLabel = "Abundante (Orgánico)";
+            if (currentQuality === 'esencial') {
+                densityMultiplier = 0.75;
+                densityLabel = "Esencial (Básico)";
+            } else if (currentQuality === 'premium') {
+                densityMultiplier = 1.45;
+                densityLabel = "De Película (Doble volumen)";
+            }
+
+            // Calcular Presupuesto Final
+            const subtotal = (baseSetupCost + (guests * guestCostMultiplier)) * densityMultiplier;
+            const minEstimate = subtotal * 0.9;
+            const maxEstimate = subtotal * 1.1;
+
+            // Formateador a COP sin decimales
+            const formatter = new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                maximumFractionDigits: 0
+            });
+
+            // Actualizar UI de cálculo
+            document.getElementById('calc-range-min').textContent = formatter.format(minEstimate);
+            document.getElementById('calc-range-max').textContent = formatter.format(maxEstimate);
+
+            document.getElementById('summary-linea').textContent = serviceLabel;
+            document.getElementById('summary-densidad').textContent = densityLabel;
+            document.getElementById('summary-tiempo').textContent = durationLabel;
+
+            // Almacenar el string en la caja oculta
+            const summaryString = `Línea: ${serviceLabel} | Globos: ${densityLabel} | Invitados: ${guests} Pers. | Estimado: ${formatter.format(minEstimate)} - ${formatter.format(maxEstimate)}`;
+            document.getElementById('form-calc-details').value = summaryString;
+        }
+
+        // Lockea la cotización actual, rellena el text area de contacto y hace scroll elegante
+        function lockQuoteAndScroll() {
+            const sumType = document.getElementById('summary-linea').textContent;
+            const sumDensity = document.getElementById('summary-densidad').textContent;
+            const guests = document.getElementById('calc-guests-input').value;
+            const minVal = document.getElementById('calc-range-min').textContent;
+            const maxVal = document.getElementById('calc-range-max').textContent;
+
+            const textMessage = `Hola, acabo de utilizar su cotizador express en línea. Estoy interesado en un servicio de diseño decorativo para una celebración en Bogotá:\n\n` +
+                                `- Tipo de evento: ${sumType}\n` +
+                                `- Densidad de globos/acabados: ${sumDensity}\n` +
+                                `- Número aproximado de invitados: ${guests} Personas\n` +
+                                `- Rango de inversión proyectado: ${minVal} - ${maxVal}\n\n` +
+                                `Por favor, me gustaría verificar disponibilidad para la fecha de mi fiesta.`;
+            
+            document.getElementById('message').value = textMessage;
+            
+            // Lanzar toast de éxito
+            showToast("Presupuesto Registrado", "Hemos guardado tus valores y los inyectamos en el formulario de contacto.", "success");
+
+            // Scroll suave hacia el formulario de contacto
+            document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        updateCalculator();
+
+
+        // --- 8. SISTEMA DE TOASTS INDEPENDIENTES ---
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            
+            const iconColor = type === 'success' ? 'var(--color-green)' : 'var(--color-yellow)';
+            const icon = type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-info';
+
+            toast.innerHTML = `
+                <div style="color: ${iconColor}; font-size: 1.2rem; margin-top: 0.1rem;"><i class="${icon}"></i></div>
+                <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+                    <h4 style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-primary);">${title}</h4>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">${message}</p>
+                </div>
+            `;
+
+            container.appendChild(toast);
+
+            // Trigger animaciones (Slide Up + Fade In)
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 50);
+
+            // Eliminar y transicionar de salida
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    toast.remove();
+                }, 400);
+            }, 4500);
+        }
+
+
+        // --- 9. ENVÍO DE FORMULARIOS ---
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('event-date').value;
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Verificando agenda de eventos...";
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                showToast(
+                    "¡Asesoría Agendada!", 
+                    `Muchas gracias ${name}. Hemos recibido tu fecha para el día ${date}. Un decorador te escribirá por WhatsApp al número ${phone} para definir tu paleta de colores de globos.`, 
+                    "success"
+                );
+                
+                // Resetear Formulario
+                document.getElementById('lead-form').reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1200);
+        }
+
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const emailInput = event.target.querySelector('input');
+            const email = emailInput.value;
+
+            showToast(
+                "¡Suscrito Correctamente!", 
+                `El correo ${email} ha sido añadido a nuestro catálogo de inspiración festiva de Bogotá.`, 
+                "success"
+            );
+            emailInput.value = '';
+        }
+
+
+        // --- 10. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ) ---
+        function toggleFaq(index) {
+            const items = document.querySelectorAll('.faq-item');
+            const currentItem = items[index];
+            const isCurrentlyActive = currentItem.classList.contains('active');
+
+            // Cerramos todos
+            items.forEach(item => {
+                item.classList.remove('active');
+                const content = item.querySelector('.faq-content');
+                content.style.maxHeight = '0px';
+            });
+
+            // Si no estaba activo, lo abrimos
+            if (!isCurrentlyActive) {
+                currentItem.classList.add('active');
+                const activeContent = currentItem.querySelector('.faq-content');
+                activeContent.style.maxHeight = activeContent.scrollHeight + 30 + 'px';
+            }
+        }
+    </script>
 </body>
 </html>
